@@ -1,0 +1,260 @@
+{
+    "Scales": [
+        {
+            "name": "Major Scale",
+            "tones": [
+                2,
+                2,
+                1,
+                2,
+                2,
+                2,
+                1
+            ],
+            "emotion": "Happy, majestic"
+        },
+        {
+            "name": "Mixolydian Mode",
+            "tones": [
+                2,
+                2,
+                1,
+                2,
+                2,
+                1,
+                2
+            ],
+            "emotion": "Blues, rock"
+        },
+        {
+            "name": "Lydian mode",
+            "tones": [
+                2,
+                2,
+                2,
+                1,
+                2,
+                2,
+                1
+            ],
+            "emotion": "Ethereal, dreamy, futuristic"
+        },
+        {
+            "name": "Acoustic Scale",
+            "tones": [
+                2,
+                2,
+                2,
+                1,
+                2,
+                1,
+                2
+            ],
+            "emotion": ""
+        },
+        {
+            "name": "Phrygian Dominant Mode",
+            "tones": [
+                1,
+                3,
+                1,
+                2,
+                1,
+                2,
+                2
+            ],
+            "emotion": "Exotic, Middle Eastern"
+        },
+        {
+            "name": "Harmonic Major Scale",
+            "tones": [
+                2,
+                2,
+                1,
+                2,
+                1,
+                3,
+                1
+            ],
+            "emotion": "Majestic, mysterious"
+        },
+        {
+            "name": "Mixolydian b6",
+            "tones": [
+                2,
+                2,
+                1,
+                2,
+                1,
+                2,
+                2
+            ],
+            "emotion": "Film mysterious"
+        },
+        {
+            "name": "Minor Scale",
+            "tones": [
+                2,
+                1,
+                2,
+                2,
+                1,
+                2,
+                2
+            ],
+            "emotion": "Sentimental, tragic"
+        },
+        {
+            "name": "Dorian Mode",
+            "tones": [
+                2,
+                1,
+                2,
+                2,
+                2,
+                1,
+                2
+            ],
+            "emotion": "Hip, sophisticated, jazzy"
+        },
+        {
+            "name": "Harmonic Minor Scale",
+            "tones": [
+                2,
+                1,
+                2,
+                2,
+                1,
+                3,
+                1
+            ],
+            "emotion": "Tragic, exotic, Middle Eastern"
+        },
+        {
+            "name": "Melodic Minor Scale",
+            "tones": [
+                2,
+                1,
+                2,
+                2,
+                2,
+                2,
+                1
+            ],
+            "emotion": "Mysterious, jazzy, dark"
+        },
+        {
+            "name": "Phrygian Mode",
+            "tones": [
+                1,
+                2,
+                2,
+                2,
+                1,
+                2,
+                2
+            ],
+            "emotion": "Spanish, Flamenco"
+        },
+        {
+            "name": "Locrian Mode",
+            "tones": [
+                1,
+                2,
+                2,
+                1,
+                2,
+                2,
+                2
+            ],
+            "emotion": "Very Dark, unstable"
+        },
+        {
+            "name": "Blues scale",
+            "tones": [
+                3,
+                2,
+                1,
+                1,
+                3,
+                2
+            ],
+            "emotion": "Bluesy"
+        },
+        {
+            "name": "Altered Scale",
+            "tones": [
+                1,
+                2,
+                1,
+                2,
+                2,
+                2,
+                2
+            ],
+            "emotion": "Intelectual, jazzy"
+        },
+        {
+            "name": "Major Pentatonic Scale",
+            "tones": [
+                2,
+                2,
+                3,
+                2,
+                3
+            ],
+            "emotion": "Joyful"
+        },
+        {
+            "name": "Minor Pentatonic Scale",
+            "tones": [
+                3,
+                2,
+                2,
+                3,
+                2
+            ],
+            "emotion": ""
+        },
+        {
+            "name": "Whole Tone Scale",
+            "tones": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+            ],
+            "emotion": "Dreamy, underwater"
+        },
+        {
+            "name": "Diminished Scale",
+            "tones": [
+                1,
+                2,
+                1,
+                2,
+                1,
+                2,
+                1,
+                2
+            ],
+            "emotion": "Dark, Mysterious"
+        },
+        {
+            "name": "Octatonic Scale",
+            "tones": [
+                2,
+                1,
+                2,
+                1,
+                2,
+                1,
+                2,
+                1
+            ],
+            "emotion": "Dark, Mysterious, Dracula"
+        }
+    ]
+}
