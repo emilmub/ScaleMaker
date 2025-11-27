@@ -11,7 +11,16 @@
                 2,
                 1
             ],
-            "emotion": "Happy, majestic"
+            "emotion": "Happy, majestic",
+            "triads": [
+                "Major",
+                "Minor",
+                "Minor",
+                "Major",
+                "Major",
+                "Minor",
+                "Diminished"
+            ]
         },
         {
             "name": "Mixolydian Mode",
@@ -24,7 +33,16 @@
                 1,
                 2
             ],
-            "emotion": "Blues, rock"
+            "emotion": "Blues, rock",
+            "triads": [
+                "Major",
+                "Minor",
+                "Diminished",
+                "Major",
+                "Minor",
+                "Minor",
+                "Major"
+            ]
         },
         {
             "name": "Lydian mode",
@@ -37,7 +55,16 @@
                 2,
                 1
             ],
-            "emotion": "Ethereal, dreamy, futuristic"
+            "emotion": "Ethereal, dreamy, futuristic",
+            "triads": [
+                "Major",
+                "Major",
+                "Minor",
+                "Diminished",
+                "Major",
+                "Minor",
+                "Minor"
+            ]
         },
         {
             "name": "Acoustic Scale",
@@ -50,7 +77,16 @@
                 1,
                 2
             ],
-            "emotion": ""
+            "emotion": "",
+            "triads": [
+                "Major",
+                "Major",
+                "Diminished",
+                "Diminished",
+                "Minor",
+                "Minor",
+                "Augmented"
+            ]
         },
         {
             "name": "Phrygian Dominant Mode",
@@ -63,7 +99,16 @@
                 2,
                 2
             ],
-            "emotion": "Exotic, Middle Eastern"
+            "emotion": "Exotic, Middle Eastern",
+            "triads": [
+                "Major",
+                "Major",
+                "Diminished",
+                "Minor",
+                "Diminished",
+                "Augmented",
+                "Major"
+            ]
         },
         {
             "name": "Harmonic Major Scale",
@@ -76,7 +121,16 @@
                 3,
                 1
             ],
-            "emotion": "Majestic, mysterious"
+            "emotion": "Majestic, mysterious",
+            "triads": [
+                "Major",
+                "Diminished",
+                "Major",
+                "Minor",
+                "Major",
+                "Augmented",
+                "Diminished"
+            ]
         },
         {
             "name": "Mixolydian b6",
@@ -89,7 +143,16 @@
                 2,
                 2
             ],
-            "emotion": "Film mysterious"
+            "emotion": "Film mysterious",
+            "triads": [
+                "Major",
+                "Diminished",
+                "Diminished",
+                "Minor",
+                "Major",
+                "Augmented",
+                "Major"
+            ]
         },
         {
             "name": "Minor Scale",
@@ -102,7 +165,16 @@
                 2,
                 2
             ],
-            "emotion": "Sentimental, tragic"
+            "emotion": "Sentimental, tragic",
+            "triads": [
+                "Minor",
+                "Diminished",
+                "Major",
+                "Minor",
+                "Minor",
+                "Major",
+                "Major"
+            ]
         },
         {
             "name": "Dorian Mode",
@@ -115,7 +187,16 @@
                 1,
                 2
             ],
-            "emotion": "Hip, sophisticated, jazzy"
+            "emotion": "Hip, sophisticated, jazzy",
+            "triads": [
+                "Minor",
+                "Minor",
+                "Major",
+                "Major",
+                "Minor",
+                "Diminished",
+                "Major"
+            ]
         },
         {
             "name": "Harmonic Minor Scale",
@@ -128,7 +209,16 @@
                 3,
                 1
             ],
-            "emotion": "Tragic, exotic, Middle Eastern"
+            "emotion": "Tragic, exotic, Middle Eastern",
+            "triads": [
+                "Minor",
+                "Diminished",
+                "Augmented",
+                "Minor",
+                "Major",
+                "Major",
+                "Diminished"
+            ]
         },
         {
             "name": "Melodic Minor Scale",
@@ -141,7 +231,16 @@
                 2,
                 1
             ],
-            "emotion": "Mysterious, jazzy, dark"
+            "emotion": "Mysterious, jazzy, dark",
+            "triads": [
+                "Minor",
+                "Minor",
+                "Augmented",
+                "Major",
+                "Minor",
+                "Diminished",
+                "Diminished"
+            ]
         },
         {
             "name": "Phrygian Mode",
@@ -154,7 +253,16 @@
                 2,
                 2
             ],
-            "emotion": "Spanish, Flamenco"
+            "emotion": "Spanish, Flamenco",
+            "triads": [
+                "Minor",
+                "Major",
+                "Major",
+                "Minor",
+                "Diminished",
+                "Major",
+                "Minor"
+            ]
         },
         {
             "name": "Locrian Mode",
@@ -167,7 +275,16 @@
                 2,
                 2
             ],
-            "emotion": "Very Dark, unstable"
+            "emotion": "Very Dark, unstable",
+            "triads": [
+                "Diminished",
+                "Major",
+                "Minor",
+                "Minor",
+                "Major",
+                "Major",
+                "Minor"
+            ]
         },
         {
             "name": "Blues scale",
@@ -192,7 +309,16 @@
                 2,
                 2
             ],
-            "emotion": "Intelectual, jazzy"
+            "emotion": "Intelectual, jazzy",
+            "triads": [
+                "Diminished",
+                "Minor",
+                "Minor",
+                "Augmented",
+                "Major",
+                "Major",
+                "Diminished"
+            ]
         },
         {
             "name": "Major Pentatonic Scale",
@@ -226,7 +352,15 @@
                 2,
                 2
             ],
-            "emotion": "Dreamy, underwater"
+            "emotion": "Dreamy, underwater",
+            "triads": [
+                "Augmented",
+                "Augmented",
+                "Augmented",
+                "Augmented",
+                "Augmented",
+                "Augmented"
+            ]
         },
         {
             "name": "Diminished Scale",
@@ -240,7 +374,17 @@
                 1,
                 2
             ],
-            "emotion": "Dark, Mysterious"
+            "emotion": "Dark, Mysterious",
+            "triads": [
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished"
+            ]
         },
         {
             "name": "Octatonic Scale",
@@ -254,7 +398,17 @@
                 2,
                 1
             ],
-            "emotion": "Dark, Mysterious, Dracula"
+            "emotion": "Dark, Mysterious, Dracula",
+            "triads": [
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished",
+                "Diminished"
+            ]
         }
     ]
 }
