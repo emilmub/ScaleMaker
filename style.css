@@ -1,0 +1,50 @@
+h1 {
+    text-align: center;
+}
+
+#scale {
+    background-color: aqua;
+    width: 90%;
+    height: 55px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scale .tone {
+    width: 50px;
+    height: 50px;
+    border-color: black;
+    border-width: 1px;
+    background-color: chartreuse;
+    border-style: solid;
+    font-size: 50px;
+    text-align: center;
+    line-height: 1;
+}
+
+#scale .modifiers {
+    width: 50px;
+    height: 50px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+#scale .accidentals {
+    width: 25px;
+    height: 25px;
+    justify-self: flex-start;
+    font-size: 25px;
+    background-color: blue;
+}
+
+#scale .chord-quality {
+    width: 25px;
+    height: 25px;
+    justify-self: flex-end;
+    font-size: 25px;
+    background-color: red;
+}
