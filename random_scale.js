@@ -7,7 +7,7 @@ let scalesPromise = fetch("scales.json").then(r => r.json()) // Makes promise fo
 async function getRandomScale() {
     let scales = await scalesPromise;
 
-    let randomScale = scales[Math.floor(Math.random * scales)]; // Chooses a scale
+    let randomScale = scales[Math.floor(Math.random * scales.length)]; // Chooses a scale
 
     let toneIndex = Math.floor(Math.random() * numberOfTones); // Chooses a tone for the scale
     console.log(`Chosen tone: ${tones[toneIndex]}`);
