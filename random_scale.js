@@ -14,8 +14,7 @@ async function getRandomScale() {
 
     let toneIndex = Math.floor(Math.random() * numberOfTones); // Chooses a tone for the scale
     let h2 = document.querySelector('h2');
-    h2.innerText = `${tones[toneIndex]}, ${randomScale["name"]}`
-    console.log(`Chosen scale: ${tones[toneIndex]}, ${randomScale["name"]}`);
+    h2.innerText = `${tones[toneIndex]} ${randomScale["name"]}`
     let scaleTones = [tones[toneIndex]];
     let scaleChords = [];
     for (let index = 0; index < randomScale["tones"].length; ++index) {
