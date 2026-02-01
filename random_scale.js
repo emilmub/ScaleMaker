@@ -19,4 +19,30 @@ async function getRandomScale() {
         toneIndex %= numberOfTones;
         scaleTones.push(tones[toneIndex]);
     }
+
+    let strToPrint = `Chords: `;
+    for (let i = 0; i <= scaleChords.length; ++i) {
+        strToPrint += `${scaleTones[i]}`;
+        if (scaleChords[i] == "Major") {
+            strToPrint += ` `;
+        }
+        else if (scaleChords[i] == "Minor") {
+            strToPrint += `m `;
+        }
+        else if (scaleChords[i] == "Diminished") {
+            strToPrint += `dim `;
+        }
+        else if (scaleChords[i] == "Augmented") {
+            strToPrint += `+ `;
+        }
+        else {
+            console.error("Missed a type of chord.")
+        }
+    }
+
+    console.log(strToPrint);
 }
+
+const randomize_btn = document.querySelector("#randomize");
+
+randomize_btn.onclick = getRandomScale;
