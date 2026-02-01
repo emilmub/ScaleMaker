@@ -23,6 +23,35 @@ async function getRandomScale() {
         scaleTones.push(tones[toneIndex]);
     }
 
+    let toneDivs = document.querySelectorAll(".tone");
+    let chordQualityDivs = document.querySelectorAll(".chord-quality");
+    let accidentalsQualityDivs = document.querySelectorAll(".accidentals");
+    for (let divIndex = 0; divIndex < chordQualityDivs.length; ++divIndex) {
+        if (scaleTones[divIndex].endsWith("#")) {
+            toneDivs[divIndex].innerText = scaleTones[divIndex][0];
+            accidentalsQualityDivs[divIndex] = scaleTones[1];
+        }
+        else {
+            toneDivs[divIndex].innerText = scaleTones[divIndex];
+        }
+
+        if (scaleChords[divIndex] == "Major") {
+            chordQualityDivs[divIndex].innerText = "";
+        }
+        else if (scaleChords[divIndex] == "Minor") {
+            chordQualityDivs[divIndex].innerText = `m`;
+        }
+        else if (scaleChords[divIndex] == "Diminished") {
+            chordQualityDivs[divIndex].innerText = `dim`;
+        }
+        else if (scaleChords[divIndex] == "Augmented") {
+            chordQualityDivs[divIndex].innerText = `+`;
+        }
+        else {
+            console.error("Missed a type of chord.")
+        }
+    }
+
     let strToPrint = `Chords: `;
     for (let i = 0; i < scaleChords.length; ++i) {
         strToPrint += `${scaleTones[i]}`;
