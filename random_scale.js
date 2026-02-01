@@ -5,15 +5,18 @@ const numberOfTones = 12;
 let scalesPromise = fetch("scales.json").then(r => r.json()) // Makes promise for reading scale data in json
 
 async function getRandomScale() {
-    let scales = await scalesPromise["Scales"];
+    let scales = await scalesPromise;
 
-    let randomScale = scales[Math.floor(Math.random * scales.length)]; // Chooses a scale
+    let numberOfScales = scales["Scales"].length;
+    let scaleIndex = Math.floor(Math.random() * numberOfScales);
+
+    let randomScale = scales["Scales"][scaleIndex]; // Chooses a scale
 
     let toneIndex = Math.floor(Math.random() * numberOfTones); // Chooses a tone for the scale
-    console.log(`Chosen tone: ${tones[toneIndex]}`);
+    console.log(`Chosen scale: ${tones[toneIndex]}, ${randomScale["name"]}`);
     let scaleTones = [tones[toneIndex]];
     let scaleChords = [];
-    for (let index = 0; index <= randomScale["tones"].length; ++index) {
+    for (let index = 0; index < randomScale["tones"].length; ++index) {
         scaleChords.push(randomScale["triads"][index]);
         toneIndex += randomScale["tones"][index];
         toneIndex %= numberOfTones;
@@ -21,7 +24,7 @@ async function getRandomScale() {
     }
 
     let strToPrint = `Chords: `;
-    for (let i = 0; i <= scaleChords.length; ++i) {
+    for (let i = 0; i < scaleChords.length; ++i) {
         strToPrint += `${scaleTones[i]}`;
         if (scaleChords[i] == "Major") {
             strToPrint += ` `;
