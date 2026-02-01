@@ -13,6 +13,8 @@ async function getRandomScale() {
     let randomScale = scales["Scales"][scaleIndex]; // Chooses a scale
 
     let toneIndex = Math.floor(Math.random() * numberOfTones); // Chooses a tone for the scale
+    let h2 = document.querySelector('h2');
+    h2.innerText = `${tones[toneIndex]}, ${randomScale["name"]}`
     console.log(`Chosen scale: ${tones[toneIndex]}, ${randomScale["name"]}`);
     let scaleTones = [tones[toneIndex]];
     let scaleChords = [];
@@ -26,13 +28,14 @@ async function getRandomScale() {
     let toneDivs = document.querySelectorAll(".tone");
     let chordQualityDivs = document.querySelectorAll(".chord-quality");
     let accidentalsQualityDivs = document.querySelectorAll(".accidentals");
-    for (let divIndex = 0; divIndex < chordQualityDivs.length; ++divIndex) {
+    for (let divIndex = 0; divIndex < chordQualityDivs.length - 1; ++divIndex) {
         if (scaleTones[divIndex].endsWith("#")) {
             toneDivs[divIndex].innerText = scaleTones[divIndex][0];
-            accidentalsQualityDivs[divIndex] = scaleTones[1];
+            accidentalsQualityDivs[divIndex].innerText = scaleTones[divIndex][1];
         }
         else {
             toneDivs[divIndex].innerText = scaleTones[divIndex];
+            accidentalsQualityDivs[divIndex].innerText = "";
         }
 
         if (scaleChords[divIndex] == "Major") {
@@ -51,28 +54,9 @@ async function getRandomScale() {
             console.error("Missed a type of chord.")
         }
     }
-
-    let strToPrint = `Chords: `;
-    for (let i = 0; i < scaleChords.length; ++i) {
-        strToPrint += `${scaleTones[i]}`;
-        if (scaleChords[i] == "Major") {
-            strToPrint += ` `;
-        }
-        else if (scaleChords[i] == "Minor") {
-            strToPrint += `m `;
-        }
-        else if (scaleChords[i] == "Diminished") {
-            strToPrint += `dim `;
-        }
-        else if (scaleChords[i] == "Augmented") {
-            strToPrint += `+ `;
-        }
-        else {
-            console.error("Missed a type of chord.")
-        }
-    }
-
-    console.log(strToPrint);
+    toneDivs[toneDivs.length - 1].innerText = toneDivs[0].innerText;
+    chordQualityDivs[chordQualityDivs.length - 1].innerText = chordQualityDivs[0].innerText;
+    accidentalsQualityDivs[accidentalsQualityDivs.length - 1].innerText = accidentalsQualityDivs[0].innerText;
 }
 
 const randomize_btn = document.querySelector("#randomize");
