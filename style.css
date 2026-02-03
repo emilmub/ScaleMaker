@@ -53,6 +53,11 @@ h1 {
     font-size: 25px;
 }
 
+#controls {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .button {
     background-color: #fbeee0;
     border: 2px solid #422800;
