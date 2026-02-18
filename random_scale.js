@@ -51,6 +51,12 @@ async function buildScale(scaleIndex, toneIndex) {
     let h2 = document.querySelector('h2');
     h2.innerText = `${tones[toneIndex]} ${scale["name"]}`
 
+    let scaleSelect = document.querySelector('#scale-select');
+    scaleSelect.value = scale["name"];
+
+    let toneSelect = document.querySelector('#tone-select');
+    toneSelect.value = tones[toneIndex];
+
     let scaleChords = [];
     let scaleTones = [tones[toneIndex]];
     for (let index = 0; index < scale["tones"].length; ++index) {
