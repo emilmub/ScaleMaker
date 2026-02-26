@@ -123,8 +123,6 @@ async function buttonSelection() {
 }
 
 function buttonPlayScale() {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
     const noteDuration = 0.5;
 
     const oscillator = audioContext.createOscillator();
@@ -159,10 +157,52 @@ function buttonPlayScale() {
     });
 
     oscillator.start(startTime);
-    oscillator.stop(freqToPlay.length * noteDuration);
+    oscillator.stop(startTime + freqToPlay.length * noteDuration);
+}
+
+function playChord() {
+    const oscillators = [audioContext.createOscillator(), audioContext.createOscillator(), audioContext.createOscillator()];
+    const gainNode = audioContext.createGain();
+    gainNode.gain.value = 0.1;
+
+    let tone = this.querySelector(".tone").innerText;
+    let toneIndex = tones.indexOf(tone);
+
+    gainNode.connect(audioContext.destination);
+
+    for (oscillator of oscillators) {
+        oscillator.connect(gainNode);
+        if (toneIndex < 12) {
+            oscillator.frequency.value = toneFreqOct4[toneIndex];
+        }
+        else {
+            oscillator.frequency.value = toneFreqOct5[toneIndex % 12];
+        }
+
+        toneIndex += 2;
+
+        oscillator.start();
+
+    }
+    activeOscillators.set(this, oscillators);
+}
+
+function stopChord() {
+    const oscillators = activeOscillators.get(this);
+
+    if (typeof oscillators !== 'undefined') {
+        for (oscillator of oscillators) {
+            oscillator.stop();
+        }
+
+        activeOscillators.delete(this);
+    }
+
 }
 
 populateScales();
+let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let activeOscillators = new Map();
 
 const select_btn = document.querySelector("#select-button");
 select_btn.onclick = buttonSelection;
@@ -171,4 +211,11 @@ const randomize_btn = document.querySelector("#randomize");
 randomize_btn.onclick = buttonRandomize;
 
 const play_btn = document.querySelector("#play-scale");
-play_btn.onclick = buttonPlayScale;
+play_btn.addEventListener("click", buttonPlayScale);
+
+const chordDivs = document.querySelectorAll(".chord");
+chordDivs.forEach(chord => {
+    chord.addEventListener("pointerdown", playChord);
+    chord.addEventListener("pointerup", stopChord);
+    chord.addEventListener("pointerleave", stopChord);
+});
