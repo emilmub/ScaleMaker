@@ -1,4 +1,6 @@
 let tones = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+let toneFreqOct4 = [261.63, 277.18, 293.66, 311.13, 329.63, 349.23, 369.99, 392, 415.3, 440, 466.16, 493.88]
+let toneFreqOct5 = [523.25, 554.37, 587.33, 622.25, 659.25, 698.46, 739.99, 783.99, 830.61, 880, 932.33, 987.77]
 
 const numberOfTones = 12;
 
@@ -6,6 +8,8 @@ let scalesPromise = fetch("scales.json").then(r => r.json()) // Makes promise fo
 
 let scaleNames = [];
 let numberOfScales = 0;
+
+let scaleTones = ["C", "D", "E", "F", "G", "A", "B", "C"]
 
 async function populateScales() {
     let scales = await scalesPromise;
@@ -108,12 +112,54 @@ async function buttonRandomize() {
     let [scaleIndex, toneIndex] = getRandomScale();
     let scaleObject = await buildScale(scaleIndex, toneIndex);
     showScale(scaleObject.scaleTones, scaleObject.scaleChords);
+    scaleTones = scaleObject.scaleTones;
 }
 
 async function buttonSelection() {
     let [scaleIndex, toneIndex] = selectScale();
     let scaleObject = await buildScale(scaleIndex, toneIndex);
     showScale(scaleObject.scaleTones, scaleObject.scaleChords);
+    scaleTones = scaleObject.scaleTones;
+}
+
+function buttonPlayScale() {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    const noteDuration = 0.5;
+
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.type = "sine";
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    gainNode.gain.value = 0.1;
+
+    let frequencies = toneFreqOct4;
+
+    let toneIndex = 0;
+
+    let freqToPlay = [];
+
+    for (let tone of scaleTones) {
+        if (toneIndex > tones.indexOf(tone)) {
+            frequencies = toneFreqOct5;
+        }
+        toneIndex = tones.indexOf(tone);
+        freqToPlay.push(frequencies[toneIndex]);
+    }
+
+    const startTime = audioContext.currentTime;
+
+    freqToPlay.forEach((freq, index) => {
+        oscillator.frequency.setValueAtTime(freq, startTime + index * noteDuration
+        );
+    });
+
+    oscillator.start(startTime);
+    oscillator.stop(freqToPlay.length * noteDuration);
 }
 
 populateScales();
@@ -123,3 +169,6 @@ select_btn.onclick = buttonSelection;
 
 const randomize_btn = document.querySelector("#randomize");
 randomize_btn.onclick = buttonRandomize;
+
+const play_btn = document.querySelector("#play-scale");
+play_btn.onclick = buttonPlayScale;
