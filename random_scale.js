@@ -131,9 +131,11 @@ function buttonPlayScale() {
     oscillator.type = "sine";
 
     oscillator.connect(gainNode);
+
     gainNode.connect(audioContext.destination);
 
     gainNode.gain.value = 0.1;
+    oscillator.type = "triangle";
 
     let frequencies = toneFreqOct4;
 
@@ -166,12 +168,36 @@ function playChord() {
     gainNode.gain.value = 0.1;
 
     let tone = this.querySelector(".tone").innerText;
+    let accidental = this.querySelector(".accidentals").innerText;
+    let quality = this.querySelector(".chord-quality").innerText;
+
     let toneIndex = tones.indexOf(tone);
+    if (accidental === '#') {
+        toneIndex += 1;
+    }
+    let intervals = [];
+    switch (quality) {
+        case "":
+            intervals = [4, 3];
+            break;
+        case "m":
+            intervals = [3, 4];
+            break;
+        case "dim":
+            intervals = [3, 3];
+            break;
+        case "+":
+            intervals = [4, 4];
+            break;
+    }
 
     gainNode.connect(audioContext.destination);
 
+    let counter = 0
+
     for (oscillator of oscillators) {
         oscillator.connect(gainNode);
+        oscillator.type = "triangle";
         if (toneIndex < 12) {
             oscillator.frequency.value = toneFreqOct4[toneIndex];
         }
@@ -179,7 +205,8 @@ function playChord() {
             oscillator.frequency.value = toneFreqOct5[toneIndex % 12];
         }
 
-        toneIndex += 2;
+        toneIndex += intervals[counter % intervals.length];
+        counter++;
 
         oscillator.start();
 
