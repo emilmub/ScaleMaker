@@ -35,6 +35,10 @@ h2 {
     padding: 3em 1em 3em 1em;
 }
 
+#scale .chord:hover {
+    background-color: #faef66;
+}
+
 #scale .tone {
     width: 50px;
     height: 50px;

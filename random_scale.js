@@ -191,6 +191,9 @@ function playChord() {
             break;
     }
 
+    let chords = Array.from(document.querySelectorAll(".chord"));
+    let chordIndex = chords.indexOf(this);
+
     gainNode.connect(audioContext.destination);
 
     let counter = 0
@@ -205,10 +208,15 @@ function playChord() {
             oscillator.frequency.value = toneFreqOct5[toneIndex % 12];
         }
 
-        toneIndex += intervals[counter % intervals.length];
-        counter++;
-
         oscillator.start();
+
+        // Change style of chord card
+        chords[chordIndex % (chords.length - 1)].style.background = "#C9CBA3";
+
+
+        toneIndex += intervals[counter % intervals.length];
+        chordIndex += 2;
+        counter++;
 
     }
     activeOscillators.set(this, oscillators);
@@ -217,9 +225,14 @@ function playChord() {
 function stopChord() {
     const oscillators = activeOscillators.get(this);
 
+    let chords = Array.from(document.querySelectorAll(".chord"));
+    let chordIndex = chords.indexOf(this);
+
     if (typeof oscillators !== 'undefined') {
         for (oscillator of oscillators) {
             oscillator.stop();
+            chords[chordIndex % (chords.length - 1)].style.background = "";
+            chordIndex += 2;
         }
 
         activeOscillators.delete(this);
